@@ -39,7 +39,6 @@ public class Radio {
 
     public void setCurrentVolume(int volume) {
         if (volume < 0 || volume > 10) {
-
             return;
         }
         currentVolume = volume;
@@ -56,6 +55,7 @@ public class Radio {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
+
     }
 
 }

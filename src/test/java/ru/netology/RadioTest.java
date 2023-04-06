@@ -90,6 +90,37 @@ public class RadioTest {
     }
 
     @Test
+    public void setCurrentVolumeOutOfTheRangeNeg() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(-1);
+        assertEquals(0, radio.getCurrentVolume());
+
+    }
+
+    @Test
+    public void setCurrentVolumeOutOfTheRangePos() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(11);
+        assertEquals(0, radio.getCurrentVolume());
+
+    }
+
+    @Test
+    public void setCurrentVolumeWhenBoundaryBottom() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(0);
+        assertEquals(0, radio.getCurrentVolume());
+    }
+
+    @Test
+    public void setCurrentVolumeWhenBoundaryTop() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(10);
+        assertEquals(10, radio.getCurrentVolume());
+    }
+
+
+    @Test
     public void increaseVolume() {
         Radio radio = new Radio();
         radio.setCurrentVolume(8);
